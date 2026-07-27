@@ -18,7 +18,7 @@ const readWebsiteFile = (relativePath) =>
 test("publishes one consistent canonical URL and factual structured data", async () => {
   const html = await readWebsiteFile("index.html");
   const canonicalElement =
-    '<link rel="canonical" href="https://kurobara.systems/">';
+    '<link href="https://kurobara.systems/" rel="canonical">';
   assert.equal(html.split(canonicalElement).length - 1, 1);
   assert.ok(
     html.includes(
@@ -36,7 +36,7 @@ test("publishes one consistent canonical URL and factual structured data", async
     ["Organization", "WebSite", "SoftwareApplication"]
   );
 
-  const application = graph["@graph"][2];
+  const [, , application] = graph["@graph"];
   assert.equal(application.url, "https://kurobara.systems/");
   assert.equal(application.offers.price, 0);
   assert.equal(

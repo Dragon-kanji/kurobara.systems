@@ -1,13 +1,21 @@
 {
-  "name": "@kurobara/website",
+  "name": "kurobara.systems",
   "version": "0.1.0",
   "license": "Apache-2.0",
   "private": true,
   "type": "module",
+  "packageManager": "npm@10.9.4",
+  "engines": {
+    "node": "24.14.0"
+  },
   "scripts": {
     "build": "vite build",
+    "check": "ultracite check",
     "dev": "vite --host 127.0.0.1",
+    "fix": "ultracite fix",
     "preview": "vite preview --host 127.0.0.1",
+    "security:audit": "npm audit --omit=dev --package-lock-only --audit-level=info",
+    "security:audit:all": "npm audit --package-lock-only --audit-level=info",
     "test": "node --test test/*.test.mjs",
     "typecheck": "tsc --project tsconfig.json --noEmit"
   },
@@ -16,6 +24,9 @@
     "@fontsource/ibm-plex-mono": "5.3.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.4.16",
+    "typescript": "^5.9.3",
+    "ultracite": "^7.2.5",
     "vite": "8.1.5"
   }
 }

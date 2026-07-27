@@ -695,6 +695,9 @@ button {
   display: grid;
   gap: 0.4rem;
   width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .data-stage {
@@ -852,8 +855,11 @@ button {
   flex-direction: column;
   align-items: center;
   width: clamp(3.7rem, 5vw, 5.5rem);
+  padding: 0;
+  margin: 0;
   color: var(--black);
   background: var(--pink);
+  border: 0;
   clip-path: polygon(
     18% 0,
     82% 0,
