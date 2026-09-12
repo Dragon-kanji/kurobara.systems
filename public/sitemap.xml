@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://kurobara.systems/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-09-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kurobara.systems/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kurobara.systems/?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kurobara.systems/" />
+  </url>
+  <url>
+    <loc>https://kurobara.systems/?lang=fr</loc>
+    <lastmod>2026-09-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kurobara.systems/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kurobara.systems/?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kurobara.systems/" />
+  </url>
+  <url>
+    <loc>https://kurobara.systems/kurobara/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kurobara.systems/kurobara/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kurobara.systems/kurobara/?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kurobara.systems/kurobara/" />
+  </url>
+  <url>
+    <loc>https://kurobara.systems/kurobara/?lang=fr</loc>
+    <lastmod>2026-09-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kurobara.systems/kurobara/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kurobara.systems/kurobara/?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kurobara.systems/kurobara/" />
   </url>
 </urlset>

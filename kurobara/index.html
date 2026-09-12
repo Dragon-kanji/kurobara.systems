@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title data-i18n="metadata.title">
+      Kurobara - B2B list building for agents
+    </title>
+    <meta
+      content="Open-source, BYOK infrastructure for agents to discover companies, enrich contacts, verify work emails, and export structured B2B data."
+      data-i18n-content="metadata.pageDescription"
+      name="description"
+    >
+    <meta content="#000000" name="theme-color">
+    <meta content="dark light" name="color-scheme">
+    <meta
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      name="robots"
+    >
+    <link href="https://kurobara.systems/kurobara/" rel="canonical">
+    <link
+      href="https://kurobara.systems/kurobara/"
+      hreflang="en"
+      rel="alternate"
+    >
+    <link
+      href="https://kurobara.systems/kurobara/?lang=fr"
+      hreflang="fr"
+      rel="alternate"
+    >
+    <link
+      href="https://kurobara.systems/kurobara/"
+      hreflang="x-default"
+      rel="alternate"
+    >
+    <link href="/favicon.svg" rel="icon" type="image/svg+xml">
+    <link href="/kurobara/site.webmanifest" rel="manifest">
+    <meta content="website" property="og:type">
+    <meta
+      content="en_US"
+      data-i18n-content="metadata.locale"
+      property="og:locale"
+    >
+    <meta content="Kurobara" property="og:site_name">
+    <meta
+      content="Kurobara - B2B list building for agents"
+      data-i18n-content="metadata.title"
+      property="og:title"
+    >
+    <meta
+      content="From market criteria to verified work emails. Open source, BYOK, and headless."
+      data-i18n-content="metadata.socialDescription"
+      property="og:description"
+    >
+    <meta content="https://kurobara.systems/kurobara/" property="og:url">
+    <meta
+      content="https://kurobara.systems/assets/social/og-product-en.jpg"
+      data-i18n-content="metadata.socialImage"
+      property="og:image"
+    >
+    <meta content="image/jpeg" property="og:image:type">
+    <meta content="1536" property="og:image:width">
+    <meta content="1024" property="og:image:height">
+    <meta
+      content="Kurobara - open-source B2B list building for agents"
+      data-i18n-content="metadata.socialImageAlt"
+      property="og:image:alt"
+    >
+    <meta content="summary_large_image" name="twitter:card">
+    <meta
+      content="Kurobara - B2B list building for agents"
+      data-i18n-content="metadata.title"
+      name="twitter:title"
+    >
+    <meta
+      content="From market criteria to verified work emails. Open source, BYOK, and headless."
+      data-i18n-content="metadata.socialDescription"
+      name="twitter:description"
+    >
+    <meta
+      content="https://kurobara.systems/assets/social/og-product-en.jpg"
+      data-i18n-content="metadata.socialImage"
+      name="twitter:image"
+    >
+    <meta
+      content="Kurobara - open-source B2B list building for agents"
+      data-i18n-content="metadata.socialImageAlt"
+      name="twitter:image:alt"
+    >
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://kurobara.systems/#organization",
+      "name": "Kurobara",
+      "url": "https://kurobara.systems/",
+      "logo": "https://kurobara.systems/favicon.svg",
+      "sameAs": [
+        "https://github.com/Dragon-kanji/Kurobara"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://kurobara.systems/kurobara/#website",
+      "url": "https://kurobara.systems/kurobara/",
+      "name": "Kurobara",
+      "description": "Open-source, BYOK infrastructure for agent-driven B2B list building.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://kurobara.systems/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://kurobara.systems/kurobara/#software",
+      "name": "Kurobara",
+      "url": "https://kurobara.systems/kurobara/",
+      "description": "Open-source, BYOK infrastructure for agents to discover companies, enrich contacts, verify work emails, and export structured B2B data.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Platform independent",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "priceCurrency": "USD"
+      },
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "codeRepository": "https://github.com/Dragon-kanji/Kurobara",
+      "image": "https://kurobara.systems/assets/social/og-product-en.jpg",
+      "author": {
+        "@id": "https://kurobara.systems/#organization"
+      }
+    }
+  ]
+}
+</script>
+  </head>
+  <body>
+    <a class="skip-link" data-i18n="accessibility.skipToContent" href="#main"
+      >Skip to content</a
+    >
+
+    <header class="site-header" data-header>
+      <a
+        aria-label="Kurobara home"
+        class="brand"
+        data-i18n-label="accessibility.brandHome"
+        href="#top"
+        >KUROBARA</a
+      >
+      <div aria-hidden="true" class="header-signal">
+        <span class="crosshair"></span>
+        <span class="signal-line"></span>
+      </div>
+      <button
+        aria-controls="site-navigation"
+        aria-expanded="false"
+        class="menu-toggle"
+        data-menu-toggle
+        type="button"
+      >
+        <span class="visually-hidden" data-i18n="accessibility.toggleNavigation"
+          >Toggle navigation</span
+        >
+        <span></span>
+        <span></span>
+      </button>
+      <nav
+        aria-label="Primary"
+        class="site-nav"
+        data-i18n-label="accessibility.primaryNavigation"
+        data-menu
+        id="site-navigation"
+      >
+        <a
+          data-i18n="navigation.docs"
+          href="https://github.com/Dragon-kanji/Kurobara/tree/main/docs"
+          >Docs</a
+        >
+        <a
+          data-i18n="navigation.github"
+          href="https://github.com/Dragon-kanji/Kurobara"
+          >GitHub</a
+        >
+        <a
+          data-i18n="navigation.contracts"
+          href="https://github.com/Dragon-kanji/Kurobara/tree/main/packages/contracts"
+          >Contracts</a
+        >
+        <a
+          data-i18n="navigation.cli"
+          href="https://github.com/Dragon-kanji/Kurobara/tree/main/packages/cli"
+          >CLI</a
+        >
+        <a data-i18n="navigation.studio" data-site-link="/" href="/"
+          >Studio ↗</a
+        >
+        <nav
+          aria-label="Language"
+          class="language-switch"
+          data-i18n-label="accessibility.languageSelector"
+        >
+          <a
+            aria-current="true"
+            aria-label="Switch to English"
+            data-i18n-label="accessibility.switchToEnglish"
+            data-language="en"
+            href="./"
+            lang="en"
+            >EN</a
+          >
+          <span aria-hidden="true">/</span>
+          <a
+            aria-current="false"
+            aria-label="Switch to French"
+            data-i18n-label="accessibility.switchToFrench"
+            data-language="fr"
+            href="?lang=fr"
+            lang="fr"
+            >FR</a
+          >
+        </nav>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section aria-labelledby="hero-title" class="hero" id="top">
+        <div aria-hidden="true" class="hero-streams">
+          <span
+            class="data-stream is-active"
+            data-stream-stage="discover"
+          ></span>
+          <span class="data-stream" data-stream-stage="shortlist"></span>
+          <span class="data-stream" data-stream-stage="enrich"></span>
+          <span class="data-stream" data-stream-stage="verify"></span>
+          <span class="data-stream" data-stream-stage="export"></span>
+        </div>
+
+        <div class="hero-brand">
+          <h1 class="hero-title" id="hero-title">
+            KUROBARA
+            <span class="visually-hidden" data-i18n="hero.hiddenDescriptor"
+              >- open-source B2B list building for agents</span
+            >
+          </h1>
+          <div class="hero-message">
+            <p class="hero-line" data-i18n="hero.firstLine">
+              NO SPREADSHEET REQUIRED.
+            </p>
+            <p class="hero-line hero-line-accent" data-i18n="hero.secondLine">
+              FROM MARKET CRITERIA TO VERIFIED WORK EMAILS.
+            </p>
+          </div>
+          <div class="meta-rule">
+            <span aria-hidden="true" class="meta-cross"></span>
+            <span data-i18n="hero.foundation"
+              >OPEN SOURCE / BYOK / HEADLESS</span
+            >
+            <span aria-hidden="true" class="meta-cross"></span>
+          </div>
+          <div class="hero-actions">
+            <a
+              class="button button-primary"
+              href="https://github.com/Dragon-kanji/Kurobara/blob/main/docs/getting-started.md"
+            >
+              <span data-i18n="hero.startCli">Start with the CLI</span>
+              <span aria-hidden="true" class="button-cross"></span>
+            </a>
+            <a
+              class="button button-outline"
+              href="https://github.com/Dragon-kanji/Kurobara/tree/main/packages/contracts"
+            >
+              <span data-i18n="hero.exploreContracts"
+                >Explore the contracts</span
+              >
+              <span aria-hidden="true" class="button-cross"></span>
+            </a>
+          </div>
+          <img
+            alt=""
+            class="hero-rose"
+            fetchpriority="high"
+            height="1536"
+            src="/assets/kurobara-rose.webp"
+            width="1536"
+          >
+          <div aria-hidden="true" class="tech-petals">
+            <span class="tech-petal tech-petal-1"></span>
+            <span class="tech-petal tech-petal-2"></span>
+            <span class="tech-petal tech-petal-3"></span>
+            <span class="tech-petal tech-petal-4"></span>
+            <span class="tech-petal tech-petal-5"></span>
+            <span class="tech-petal tech-petal-6"></span>
+            <span class="signal-cube signal-cube-1"></span>
+            <span class="signal-cube signal-cube-2"></span>
+            <span class="signal-cube signal-cube-3"></span>
+            <span class="signal-dash signal-dash-1"></span>
+            <span class="signal-dash signal-dash-2"></span>
+          </div>
+        </div>
+
+        <div class="hero-data">
+          <div aria-hidden="true" class="hero-target">
+            <span class="crosshair"></span>
+          </div>
+          <div aria-hidden="true" class="hero-scale">
+            <span class="scale-cube"></span>
+          </div>
+          <ol
+            aria-label="Kurobara workflow"
+            class="stage-list"
+            data-i18n-label="accessibility.workflow"
+          >
+            <li class="data-stage is-active" data-stage="discover">
+              <div class="stage-heading">
+                <span class="stage-number">01</span>
+                <h2 data-i18n="stages.discover">Discover</h2>
+              </div>
+              <div aria-hidden="true" class="stage-visual">
+                <span class="data-block data-block-wide"></span>
+                <span class="data-block data-block-mid"></span>
+                <span class="data-pulse"></span>
+                <span class="data-block data-block-wide"></span>
+                <span class="data-noise"></span>
+                <span class="barcode"></span>
+              </div>
+              <span class="stage-id">ORG-8F3A-91C2</span>
+            </li>
+            <li class="data-stage" data-stage="shortlist">
+              <div class="stage-heading">
+                <span class="stage-number">02</span>
+                <h2 data-i18n="stages.shortlist">Shortlist</h2>
+              </div>
+              <div aria-hidden="true" class="stage-visual">
+                <span class="data-block data-block-mid"></span>
+                <span class="data-noise data-noise-small"></span>
+                <span class="data-pulse"></span>
+                <span class="data-block data-block-wide"></span>
+                <span class="data-noise"></span>
+                <span class="barcode"></span>
+              </div>
+              <span class="stage-id">ENT-4D7B-22E9</span>
+            </li>
+            <li class="data-stage" data-stage="enrich">
+              <div class="stage-heading">
+                <span class="stage-number">03</span>
+                <h2 data-i18n="stages.enrich">Enrich</h2>
+              </div>
+              <div aria-hidden="true" class="stage-visual">
+                <span class="data-block data-block-small"></span>
+                <span class="data-noise data-noise-small"></span>
+                <span class="data-pulse"></span>
+                <span class="data-block data-block-wide"></span>
+                <span class="data-noise"></span>
+                <span class="barcode"></span>
+              </div>
+              <span class="stage-id">PRSN-6C9E-18F4</span>
+            </li>
+            <li class="data-stage" data-stage="verify">
+              <div class="stage-heading">
+                <span class="stage-number">04</span>
+                <h2 data-i18n="stages.verify">Verify</h2>
+              </div>
+              <div aria-hidden="true" class="stage-visual">
+                <span class="data-block data-block-small"></span>
+                <span class="data-noise data-noise-small"></span>
+                <span class="data-pulse"></span>
+                <span class="data-block data-block-wide"></span>
+                <span class="data-noise"></span>
+                <span class="barcode"></span>
+              </div>
+              <span class="stage-id">MAIL-VERIFIED</span>
+            </li>
+            <li class="data-stage" data-stage="export">
+              <div class="stage-heading">
+                <span class="stage-number">05</span>
+                <h2 data-i18n="stages.export">Export</h2>
+              </div>
+              <div aria-hidden="true" class="stage-visual">
+                <span class="data-block data-block-mid"></span>
+                <span class="data-noise data-noise-small"></span>
+                <span class="data-pulse"></span>
+                <span class="data-block data-block-wide"></span>
+                <span class="data-noise"></span>
+                <span class="barcode"></span>
+              </div>
+              <span class="stage-id">DATASET-001</span>
+            </li>
+          </ol>
+        </div>
+
+        <fieldset class="extract-rail">
+          <legend
+            class="visually-hidden"
+            data-i18n="accessibility.inspectWorkflow"
+          >
+            Inspect workflow stage
+          </legend>
+          <span aria-hidden="true" class="rail-code">KRB / FLOW / 01</span>
+          <div class="rail-controls">
+            <button
+              aria-label="Inspect Discover"
+              aria-pressed="true"
+              class="rail-control is-active"
+              data-i18n-label="accessibility.inspectDiscover"
+              data-stage-control="discover"
+              type="button"
+            >
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="m8 5 7 7-7 7" />
+              </svg>
+            </button>
+            <button
+              aria-label="Inspect Shortlist"
+              aria-pressed="false"
+              class="rail-control"
+              data-i18n-label="accessibility.inspectShortlist"
+              data-stage-control="shortlist"
+              type="button"
+            >
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="m8 5 7 7-7 7" />
+              </svg>
+            </button>
+            <button
+              aria-label="Inspect Enrich"
+              aria-pressed="false"
+              class="rail-control"
+              data-i18n-label="accessibility.inspectEnrich"
+              data-stage-control="enrich"
+              type="button"
+            >
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="m8 5 7 7-7 7" />
+              </svg>
+            </button>
+            <button
+              aria-label="Inspect Verify"
+              aria-pressed="false"
+              class="rail-control"
+              data-i18n-label="accessibility.inspectVerify"
+              data-stage-control="verify"
+              type="button"
+            >
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="m8 5 7 7-7 7" />
+              </svg>
+            </button>
+            <button
+              aria-label="Inspect Export"
+              aria-pressed="false"
+              class="rail-control"
+              data-i18n-label="accessibility.inspectExport"
+              data-stage-control="export"
+              type="button"
+            >
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="m8 5 7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </fieldset>
+        <p
+          aria-live="polite"
+          class="visually-hidden"
+          data-i18n="status.stage.discover"
+          data-stage-status
+        >
+          Discover selected.
+        </p>
+      </section>
+
+      <section
+        aria-labelledby="workflow-title"
+        class="workflow reveal"
+        id="workflow"
+      >
+        <span aria-hidden="true" class="workflow-frame"></span>
+        <span aria-hidden="true" class="workflow-corner-cross"></span>
+        <div class="section-heading">
+          <h2 id="workflow-title">
+            <span data-i18n="workflow.titleFirst">BUILT FOR AGENTS.</span><br>
+            <span data-i18n="workflow.titleSecond">DESIGNED FOR SCALE.</span>
+          </h2>
+        </div>
+        <div class="workflow-steps">
+          <article class="workflow-step">
+            <div class="workflow-label">
+              <span>01</span>
+              <h3 data-i18n="stages.discover">Discover</h3>
+            </div>
+            <svg
+              aria-hidden="true"
+              class="workflow-icon workflow-icon-radial"
+              viewBox="0 0 80 80"
+            >
+              <path
+                d="M40 4v72M4 40h72M14 14l52 52M66 14 14 66M21 7l38 66M73 21 7 59M59 7 21 73M7 21l66 38"
+              />
+            </svg>
+            <p data-i18n="workflow.discover">
+              Find companies that match explicit market criteria.
+            </p>
+          </article>
+          <article class="workflow-step">
+            <div class="workflow-label">
+              <span>02</span>
+              <h3 data-i18n="stages.shortlist">Shortlist</h3>
+            </div>
+            <svg
+              aria-hidden="true"
+              class="workflow-icon workflow-icon-pixels"
+              viewBox="0 0 80 80"
+            >
+              <path
+                d="M8 8h16v16H8zM40 8h16v16H40zM24 24h16v16H24zM56 24h16v16H56zM8 40h16v16H8zM40 40h16v16H40zM24 56h16v16H24zM56 56h16v16H56z"
+              />
+            </svg>
+            <p data-i18n="workflow.shortlist">
+              Surface the right targets with signal, not noise.
+            </p>
+          </article>
+          <article class="workflow-step">
+            <div class="workflow-label">
+              <span>03</span>
+              <h3 data-i18n="stages.enrich">Enrich</h3>
+            </div>
+            <svg
+              aria-hidden="true"
+              class="workflow-icon workflow-icon-layers"
+              viewBox="0 0 80 80"
+            >
+              <path d="M8 16h64v16H8zM8 36h52v16H8zM8 56h40v16H8z" />
+            </svg>
+            <p data-i18n="workflow.enrich">
+              Resolve identities and work emails for selected contacts.
+            </p>
+          </article>
+          <article class="workflow-step">
+            <div class="workflow-label">
+              <span>04</span>
+              <h3 data-i18n="stages.verify">Verify</h3>
+            </div>
+            <svg
+              aria-hidden="true"
+              class="workflow-icon workflow-icon-target"
+              viewBox="0 0 80 80"
+            >
+              <circle cx="40" cy="40" r="22" />
+              <path d="M40 2v76M2 40h76M40 32v16M32 40h16" />
+            </svg>
+            <p data-i18n="workflow.verify">
+              Verify work emails as a separate, explicit action.
+            </p>
+          </article>
+          <article class="workflow-step">
+            <div class="workflow-label">
+              <span>05</span>
+              <h3 data-i18n="stages.export">Export</h3>
+            </div>
+            <svg
+              aria-hidden="true"
+              class="workflow-icon workflow-icon-arrow"
+              viewBox="0 0 80 80"
+            >
+              <path d="M8 34h42V18l24 22-24 22V46H8z" />
+            </svg>
+            <p data-i18n="workflow.export">
+              Export deterministic CSV or JSONL with delivery receipts.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        aria-labelledby="contract-title"
+        class="contract reveal"
+        id="contracts"
+      >
+        <div class="contract-copy">
+          <h2 id="contract-title">
+            <span class="contract-title-main" data-i18n="contract.titleFirst"
+              >ONE CONTRACT.</span
+            ><br><span data-i18n="contract.titleSecond">EVERY SURFACE.</span>
+          </h2>
+          <p data-i18n="contract.description">
+            One versioned operation model across the REST API, TypeScript SDK,
+            and non-interactive CLI.
+          </p>
+          <a
+            class="text-link"
+            href="https://github.com/Dragon-kanji/Kurobara/blob/main/docs/architecture.md"
+          >
+            <span data-i18n="contract.action">Read the contract system</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="m8 5 7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+        <div
+          aria-label="Contract projection diagram"
+          class="contract-map"
+          data-i18n-label="accessibility.contractDiagram"
+          role="img"
+        >
+          <div class="surface-list">
+            <span>REST API</span>
+            <span>SDK</span>
+            <span>CLI</span>
+          </div>
+          <div aria-hidden="true" class="map-lines map-lines-left"></div>
+          <div class="contract-core">
+            <svg aria-hidden="true" viewBox="0 0 32 32">
+              <path d="m7 16 7 7L27 8M5 4h14M5 28h22" />
+            </svg>
+            <span
+              ><span data-i18n="contract.coreFirst">KUROBARA</span><br>
+              <span data-i18n="contract.coreSecond">CONTRACT</span></span
+            >
+          </div>
+          <div aria-hidden="true" class="map-lines map-lines-right"></div>
+          <div class="intent-list">
+            <span data-i18n="contract.discover">DISCOVER</span>
+            <span data-i18n="contract.shortlist">SHORTLIST</span>
+            <span data-i18n="contract.enrich">ENRICH</span>
+            <span data-i18n="contract.verify">VERIFY</span>
+            <span data-i18n="contract.export">EXPORT</span>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="control-title" class="agent-control reveal">
+        <div aria-hidden="true" class="control-visual">
+          <div class="control-orbit">
+            <span class="control-dot control-dot-a"></span>
+            <span class="control-dot control-dot-b"></span>
+            <span class="control-dot control-dot-c"></span>
+          </div>
+          <span class="control-lock" data-i18n="control.authority"
+            >AUTHORITY</span
+          >
+        </div>
+        <div class="control-copy">
+          <h2 id="control-title">
+            <span data-i18n="control.titleFirst">AGENTIC.</span><br>
+            <span data-i18n="control.titleSecond">NOT AUTONOMOUS.</span>
+          </h2>
+          <p data-i18n="control.description">
+            Every run is bounded by permissions, deadlines, idempotency keys,
+            provider-call caps, and explicit budgets.
+          </p>
+          <dl class="control-list">
+            <div>
+              <dt>01 /</dt>
+              <dd data-i18n="control.output">
+                Machine-readable success and error output
+              </dd>
+            </div>
+            <div>
+              <dt>02 /</dt>
+              <dd data-i18n="control.checkpoints">
+                Durable checkpoints, costs, and provenance
+              </dd>
+            </div>
+            <div>
+              <dt>03 /</dt>
+              <dd data-i18n="control.ambiguity">
+                Fail-closed ambiguous outcomes
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section
+        aria-labelledby="quickstart-title"
+        class="quickstart reveal"
+        id="quickstart"
+      >
+        <div class="quickstart-copy">
+          <h2 id="quickstart-title">
+            <span data-i18n="quickstart.titleFirst">RUN THE REAL</span><br>
+            <span data-i18n="quickstart.titleSecond">STACK LOCALLY.</span>
+          </h2>
+          <p data-i18n="quickstart.description">
+            Evaluate the full synthetic workflow without a provider account or
+            provider credits.
+          </p>
+          <a
+            class="button button-primary"
+            href="https://github.com/Dragon-kanji/Kurobara/blob/main/docs/getting-started.md"
+          >
+            <span data-i18n="quickstart.action">View the quickstart</span>
+            <span aria-hidden="true" class="button-cross"></span>
+          </a>
+        </div>
+        <section
+          aria-label="Kurobara local evaluation commands"
+          class="terminal"
+          data-i18n-label="accessibility.quickstartCommands"
+        >
+          <div class="terminal-bar">
+            <span data-i18n="quickstart.terminalSummary"
+              >CLI / SYNTHETIC / NO CREDITS</span
+            >
+            <span class="terminal-status" data-i18n="quickstart.terminalReady"
+              >READY</span
+            >
+          </div>
+          <pre
+          ><code><span class="prompt">$</span> git clone https://github.com/Dragon-kanji/Kurobara.git
+<span class="prompt">$</span> cd Kurobara
+<span class="prompt">$</span> npm ci
+<span class="prompt">$</span> npm run self-host:smoke</code></pre>
+          <button
+            class="copy-command"
+            data-copy-command
+            data-copy-text="git clone https://github.com/Dragon-kanji/Kurobara.git&#10;cd Kurobara&#10;npm ci&#10;npm run self-host:smoke"
+            type="button"
+          >
+            <span data-copy-label data-i18n="status.copyDefault"
+              >Copy commands</span
+            >
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M9 8h10v12H9zM5 4h10v4M5 4v12h4" />
+            </svg>
+          </button>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="#top">KUROBARA</a>
+      <p data-i18n="footer.foundation">OPEN SOURCE / BYOK / HEADLESS</p>
+      <nav aria-label="Footer" data-i18n-label="accessibility.footerNavigation">
+        <a
+          data-i18n="footer.docs"
+          href="https://github.com/Dragon-kanji/Kurobara/tree/main/docs"
+          >Docs</a
+        >
+        <a
+          data-i18n="footer.github"
+          href="https://github.com/Dragon-kanji/Kurobara"
+          >GitHub</a
+        >
+        <a
+          data-i18n="footer.license"
+          href="https://github.com/Dragon-kanji/Kurobara/blob/main/LICENSE"
+          >Apache-2.0</a
+        >
+        <a data-i18n="footer.fontLicenses" href="/licenses/NOTICE.txt"
+          >Font licenses</a
+        >
+      </nav>
+      <p>© <span data-year>2026</span> Kurobara</p>
+    </footer>
+
+    <script src="/src/product/main.ts" type="module"></script>
+  </body>
+</html>

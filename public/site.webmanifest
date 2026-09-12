@@ -1,10 +1,11 @@
 {
-  "name": "Kurobara",
+  "name": "Kurobara Systems",
   "short_name": "Kurobara",
-  "description": "Open-source, BYOK infrastructure for agent-driven B2B list building.",
+  "description": "Independent digital product and systems studio.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
-  "icons": []
+  "background_color": "#f6f4ee",
+  "theme_color": "#f6f4ee",
+  "icons": [],
+  "lang": "en"
 }
