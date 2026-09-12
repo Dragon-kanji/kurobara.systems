@@ -28,8 +28,10 @@ Physical French HTML files are internal; unknown routes return a real 404.
 Studio states use `#produits`, `#expertises`, `#studio`, `#contact` and
 `#explorer`. Old root `#workflow`, `#contracts` and `#quickstart` bookmarks
 redirect to the corresponding product fragment, preserving the query.
-The contact action opens the existing public email address in a mail client.
-The site itself does not submit a form or send a message.
+The bilingual contact form sends the name, email, company, message and locale to
+the same-origin `/api/contact` endpoint. Name and company are optional. Contact
+details are used only to reply and are never added to an automatic mailing
+subscription. The existing public email address remains available as a fallback.
 
 ## Local development
 
@@ -63,15 +65,18 @@ curl --fail http://127.0.0.1:8080/healthz
 npm run test:server
 ```
 
-The container has no runtime secrets, backend, cookies, or analytics. Production
-is deployed behind Coolify and Cloudflare.
+Production is deployed behind Coolify and Cloudflare. The same-origin contact
+proxy forwards JSON to the private `contact-hub-http:8080` service. Configure
+`CONTACT_HUB_PROXY_TOKEN` at runtime with the shared server-side proxy secret.
+The Nginx entrypoint substitutes it into the configuration, never into browser
+assets. With the secret absent, the static site works and intake fails closed.
+The service does not add cookies or analytics.
 
 Coolify builds this repository's protected `main` branch using the root
 Dockerfile. Merge only after the required qualification, CodeQL and dependency
 review checks pass, then trigger the existing application's normal deployment.
 Check the resulting deployment commit, healthy image and public routes. This
-release changes static content and Nginx paths; it needs no DNS, application
-secret or ingress change.
+release requires the private contact service and its matching proxy secret.
 
 Before replacing production, retain the current commit as a release tag and
 keep its container image available. If a release fails public verification,
@@ -88,7 +93,8 @@ remain unchanged.
 
 Keyboard focus, Escape, browser history, mobile disclosure navigation and
 reduced-motion styles are supported. Without JavaScript, the page content
-remains available as an ordinary anchor-linked document.
+remains available as an ordinary anchor-linked document, with an email link
+instead of the JavaScript contact form.
 
 The Studio optionally exposes two bounded WebMCP page helpers in supporting
 browsers: select a visible workflow stage and read the provider-free quickstart
