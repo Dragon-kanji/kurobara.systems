@@ -1,4 +1,5 @@
 import "./styles.css";
+import { setupContactForm } from "./contact.ts";
 import {
   type Language,
   languageSearch,
@@ -64,6 +65,13 @@ let contactInvoker: HTMLElement | null = null;
 let homeInvoker: HTMLElement | null = null;
 let leaveTimer: number | undefined;
 let animationFrame: number | undefined;
+const contactForm = setupContactForm(
+  requireElement<HTMLFormElement>("[data-contact-form]"),
+  requireElement<HTMLElement>("[data-contact-status]"),
+  requireElement<HTMLButtonElement>("[data-contact-submit]"),
+  language,
+  copy.contact
+);
 
 const setPreview = (selection: Perspective | null) => {
   preview = selection;
@@ -266,6 +274,7 @@ const applyLanguage = (next: Language) => {
   copy = translations[language];
   applyTranslations(copy, language);
   applyMetadata(language, "https://kurobara.systems/", copy);
+  contactForm.applyLanguage(language, copy.contact);
   document.title = copy.titles[route.view];
   const backText = backLink.querySelector("span");
   if (backText) {

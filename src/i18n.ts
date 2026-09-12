@@ -118,12 +118,25 @@ interface StudioCopy {
 
 interface ContactCopy {
   readonly action: string;
+  readonly companyLabel: string;
+  readonly emailLabel: string;
+  readonly error: string;
   readonly firstTitleLine: string;
   readonly lead: string;
+  readonly loading: string;
+  readonly mailFallback: string;
+  readonly messageLabel: string;
+  readonly nameLabel: string;
+  readonly optional: string;
+  readonly privacy: string;
+  readonly rateLimit: string;
+  readonly rateLimitWithDelay: string;
   readonly returnToStudio: string;
   readonly secondTitleGrow: string;
   readonly secondTitleLine: string;
+  readonly send: string;
   readonly signoff: string;
+  readonly success: string;
   readonly titlePunctuation: string;
 }
 
@@ -159,13 +172,28 @@ const en: Copy = {
     switchToFrench: "Switch to French",
   },
   contact: {
-    action: "Write to Léandre",
+    action: "Email Léandre instead",
+    companyLabel: "Company",
+    emailLabel: "Email",
+    error: "Your message could not be sent. Please try again or use email.",
     firstTitleLine: "An idea",
     lead: "Write me a few lines.",
+    loading: "Sending your message...",
+    mailFallback: "Prefer email?",
+    messageLabel: "Message",
+    nameLabel: "Name",
+    optional: "optional",
+    privacy:
+      "Your details are used only to reply. You will not be added to a mailing list.",
+    rateLimit: "Too many attempts. Please wait before trying again.",
+    rateLimitWithDelay:
+      "Too many attempts. Please try again in {delay} seconds.",
     returnToStudio: "Back to the studio",
     secondTitleGrow: "to life",
     secondTitleLine: "to bring",
+    send: "Send message",
     signoff: "A simple first conversation.",
+    success: "Message sent. Reference: {reference}",
     titlePunctuation: "?",
   },
   expertises: {
@@ -290,13 +318,28 @@ const fr: Copy = {
     switchToFrench: "Passer en français",
   },
   contact: {
-    action: "Écrire à Léandre",
+    action: "Écrire plutôt à Léandre",
+    companyLabel: "Entreprise",
+    emailLabel: "E-mail",
+    error:
+      "Votre message n’a pas pu être envoyé. Réessayez ou utilisez l’e-mail.",
     firstTitleLine: "Une idée",
     lead: "Écrivez-moi quelques lignes.",
+    loading: "Envoi de votre message...",
+    mailFallback: "Vous préférez l’e-mail ?",
+    messageLabel: "Message",
+    nameLabel: "Nom",
+    optional: "facultatif",
+    privacy:
+      "Vos coordonnées servent uniquement à vous répondre. Vous ne serez inscrit à aucune liste de diffusion.",
+    rateLimit: "Trop de tentatives. Patientez avant de réessayer.",
+    rateLimitWithDelay: "Trop de tentatives. Réessayez dans {delay} secondes.",
     returnToStudio: "Retour au studio",
     secondTitleGrow: "grandir",
     secondTitleLine: "à faire",
+    send: "Envoyer le message",
     signoff: "Un premier échange, simplement.",
+    success: "Message envoyé. Référence : {reference}",
     titlePunctuation: " ?",
   },
   expertises: {

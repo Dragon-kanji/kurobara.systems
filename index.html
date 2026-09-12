@@ -644,14 +644,104 @@
             >
           </h2>
           <p class="lead" data-i18n="contact.lead">Write me a few lines.</p>
-          <a class="button" href="mailto:hello@leandre-desmaretz-lespagnol.com"
-            ><span data-i18n="contact.action">Write to Léandre</span
-            ><svg aria-hidden="true" class="icon">
-              <use href="#arrow-up" />
-            </svg></a
+          <form
+            action="/api/contact"
+            class="contact-form"
+            data-contact-form
+            method="post"
           >
-          <p class="contact-signoff" data-i18n="contact.signoff">
-            A simple first conversation.
+            <div class="contact-field">
+              <label for="contact-name"
+                ><span data-i18n="contact.nameLabel">Name</span>
+                <span class="field-optional" data-i18n="contact.optional"
+                  >optional</span
+                ></label
+              >
+              <input
+                autocomplete="name"
+                id="contact-name"
+                maxlength="120"
+                name="name"
+              >
+            </div>
+            <div class="contact-field">
+              <label data-i18n="contact.emailLabel" for="contact-email"
+                >Email</label
+              >
+              <input
+                autocomplete="email"
+                id="contact-email"
+                maxlength="254"
+                name="email"
+                required
+                type="email"
+              >
+            </div>
+            <div class="contact-field">
+              <label for="contact-company"
+                ><span data-i18n="contact.companyLabel">Company</span>
+                <span class="field-optional" data-i18n="contact.optional"
+                  >optional</span
+                ></label
+              >
+              <input
+                autocomplete="organization"
+                id="contact-company"
+                maxlength="120"
+                name="company"
+              >
+            </div>
+            <div class="contact-field contact-message">
+              <label data-i18n="contact.messageLabel" for="contact-message"
+                >Message</label
+              >
+              <textarea
+                id="contact-message"
+                maxlength="5000"
+                minlength="5"
+                name="message"
+                required
+                rows="4"
+              ></textarea>
+            </div>
+            <div aria-hidden="true" class="contact-honeypot">
+              <label for="contact-website">Website</label>
+              <input
+                autocomplete="off"
+                id="contact-website"
+                name="website"
+                tabindex="-1"
+                type="text"
+              >
+            </div>
+            <p class="contact-privacy" data-i18n="contact.privacy">
+              Your details are used only to reply. You will not be added to a
+              mailing list.
+            </p>
+            <button
+              class="button contact-submit"
+              data-contact-submit
+              type="submit"
+            >
+              <span data-i18n="contact.send">Send message</span>
+              <svg aria-hidden="true" class="icon">
+                <use href="#arrow-up" />
+              </svg>
+            </button>
+            <p
+              aria-live="polite"
+              class="contact-status"
+              data-contact-status
+              role="status"
+            ></p>
+          </form>
+          <p class="contact-fallback">
+            <span data-i18n="contact.mailFallback">Prefer email?</span>
+            <a
+              class="text-link"
+              href="mailto:hello@leandre-desmaretz-lespagnol.com"
+              ><span data-i18n="contact.action">Email Léandre instead</span></a
+            >
           </p>
           <a
             class="return-studio text-link"
