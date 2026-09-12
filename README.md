@@ -72,6 +72,11 @@ The Nginx entrypoint substitutes it into the configuration, never into browser
 assets. With the secret absent, the static site works and intake fails closed.
 The service does not add cookies or analytics.
 
+Contact rate limits trust Cloudflare's client header only on the verified
+Traefik `10.88.0.24` and tunnel `10.88.0.17` path. Direct-origin requests use
+their immediate peer instead. Recheck this pair if either proxy is recreated;
+an unmatched path fails closed to the shared peer limit.
+
 Coolify builds this repository's protected `main` branch using the root
 Dockerfile. Merge only after the required qualification, CodeQL and dependency
 review checks pass, then trigger the existing application's normal deployment.
