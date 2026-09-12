@@ -10,6 +10,7 @@ const websiteRoot = path.resolve(
 );
 const JSON_LD_PATTERN =
   /<script type="application\/ld\+json">([\s\S]*?)<\/script>/u;
+const CANONICAL_PATTERN = /<link[^>]*rel="canonical"[^>]*>/gu;
 const LAST_MODIFIED_PATTERN = /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/u;
 
 const readWebsiteFile = (relativePath) =>
@@ -17,9 +18,9 @@ const readWebsiteFile = (relativePath) =>
 
 test("publishes one consistent canonical URL and factual structured data", async () => {
   const html = await readWebsiteFile("index.html");
-  const canonicalElement =
-    '<link href="https://kurobara.systems/" rel="canonical">';
-  assert.equal(html.split(canonicalElement).length - 1, 1);
+  const canonicals = [...html.matchAll(CANONICAL_PATTERN)];
+  assert.equal(canonicals.length, 1);
+  assert.ok(canonicals[0][0].includes('href="https://kurobara.systems/"'));
   assert.ok(
     html.includes(
       'content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"'
@@ -37,7 +38,7 @@ test("publishes one consistent canonical URL and factual structured data", async
   );
 
   const [, , application] = graph["@graph"];
-  assert.equal(application.url, "https://kurobara.systems/");
+  assert.equal(application.url, "https://kurobara.systems/kurobara/");
   assert.equal(application.offers.price, 0);
   assert.equal(
     application.codeRepository,
@@ -58,6 +59,14 @@ test("keeps robots and sitemap aligned with the canonical homepage", async () =>
     1
   );
   assert.match(sitemap, LAST_MODIFIED_PATTERN);
+  for (const url of [
+    "https://kurobara.systems/?lang=fr",
+    "https://kurobara.systems/kurobara/",
+    "https://kurobara.systems/kurobara/?lang=fr",
+  ]) {
+    assert.ok(sitemap.includes(`<loc>${url}</loc>`));
+  }
+  assert.ok(sitemap.includes('hreflang="x-default"'));
 });
 
 test("rejects crawl traps and redirects duplicate entry points", async () => {
@@ -65,10 +74,14 @@ test("rejects crawl traps and redirects duplicate entry points", async () => {
 
   assert.ok(
     nginx.includes(
-      "location = /index.html {\n    return 308 https://kurobara.systems/;\n  }"
+      "location = /index.html {\n    return 308 https://kurobara.systems/$is_args$args;\n  }"
     )
   );
   assert.ok(nginx.includes("location / {\n    try_files $uri =404;\n  }"));
+  assert.ok(nginx.includes("try_files $studio_entry =404;"));
+  assert.ok(nginx.includes("try_files $product_entry =404;"));
+  assert.ok(nginx.includes("location = /studio-fr.html {\n    internal;"));
+  assert.ok(nginx.includes("location = /kurobara/fr.html {\n    internal;"));
   assert.equal(nginx.includes("try_files $uri $uri/ /index.html"), false);
   assert.ok(nginx.includes("server_name www.kurobara.systems;"));
   assert.ok(nginx.includes("return 308 https://kurobara.systems$request_uri;"));

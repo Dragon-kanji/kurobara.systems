@@ -12,7 +12,8 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ES2022",
-    "types": ["vite/client"]
+    "types": ["vite/client"],
+    "allowImportingTsExtensions": true
   },
   "include": ["src/**/*.ts", "vite.config.ts"],
   "exclude": ["dist", "node_modules"]

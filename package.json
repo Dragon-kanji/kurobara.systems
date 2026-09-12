@@ -9,7 +9,7 @@
     "node": "24.14.0"
   },
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && node scripts/localize-build.mjs",
     "check": "ultracite check",
     "dev": "vite --host 127.0.0.1",
     "fix": "ultracite fix",
@@ -17,7 +17,9 @@
     "security:audit": "npm audit --omit=dev --package-lock-only --audit-level=info",
     "security:audit:all": "npm audit --package-lock-only --audit-level=info",
     "test": "node --test test/*.test.mjs",
-    "typecheck": "tsc --project tsconfig.json --noEmit"
+    "test:server": "node scripts/smoke-server.mjs",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "preview:export": "npm run build && node scripts/export-preview.mjs"
   },
   "dependencies": {
     "@fontsource/bebas-neue": "5.3.0",
@@ -25,6 +27,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.16",
+    "@types/node": "24.13.4",
     "typescript": "^5.9.3",
     "ultracite": "^7.2.5",
     "vite": "8.1.5"
