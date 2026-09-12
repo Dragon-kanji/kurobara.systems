@@ -44,6 +44,14 @@ test("reuses an idempotency key for the same payload and resets on change or suc
 
   assert.equal(keys.forPayload(payload), "key-1");
   assert.equal(keys.forPayload({ ...payload }), "key-1");
+  assert.deepEqual(
+    keys.forAttempt({
+      ...payload,
+      locale: "fr",
+      startedAt: payload.startedAt + 1,
+    }),
+    { key: "key-1", payload }
+  );
   assert.equal(keys.forPayload({ ...payload, message: "Changed" }), "key-2");
   keys.reset();
   assert.equal(keys.forPayload({ ...payload, message: "Changed" }), "key-3");

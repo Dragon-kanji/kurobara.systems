@@ -46,29 +46,45 @@ const isContactResponse = (value: unknown): value is ContactResponse => {
 };
 
 const payloadSignature = (payload: ContactPayload): string =>
-  JSON.stringify(payload);
+  JSON.stringify({
+    company: payload.company,
+    email: payload.email,
+    message: payload.message,
+    name: payload.name,
+    website: payload.website,
+  });
 
 export class ContactIdempotency {
   private readonly createUuid: () => string;
   private key: string | undefined;
   private signature: string | undefined;
+  private payload: ContactPayload | undefined;
 
   constructor(createUuid: () => string) {
     this.createUuid = createUuid;
   }
 
   forPayload(payload: ContactPayload): string {
+    return this.forAttempt(payload).key;
+  }
+
+  forAttempt(payload: ContactPayload): {
+    readonly key: string;
+    readonly payload: ContactPayload;
+  } {
     const nextSignature = payloadSignature(payload);
     if (this.signature !== nextSignature || !this.key) {
       this.signature = nextSignature;
       this.key = this.createUuid();
+      this.payload = { ...payload };
     }
-    return this.key;
+    return { key: this.key, payload: this.payload ?? payload };
   }
 
   reset(): void {
     this.key = undefined;
     this.signature = undefined;
+    this.payload = undefined;
   }
 }
 
@@ -187,18 +203,29 @@ export const setupContactForm = (
     if (submitting || !form.checkValidity()) {
       return;
     }
-    const payload: ContactPayload = {
+    const currentPayload: ContactPayload = {
       ...fieldsFromForm(form),
       locale: language,
       startedAt,
     };
-    const key = idempotency.forPayload(payload);
+    const { key, payload } = idempotency.forAttempt(currentPayload);
     submitting = true;
     submitButton.disabled = true;
+    form.setAttribute("aria-busy", "true");
+    const inputs = form.querySelectorAll<
+      HTMLInputElement | HTMLTextAreaElement
+    >("input, textarea");
+    for (const input of inputs) {
+      input.readOnly = true;
+    }
     updateStatus({ kind: "loading" });
     const result = await submitContact(payload, key, request);
     submitting = false;
     submitButton.disabled = false;
+    form.setAttribute("aria-busy", "false");
+    for (const input of inputs) {
+      input.readOnly = false;
+    }
 
     if (result.status === "success" && result.reference) {
       if (
