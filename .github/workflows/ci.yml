@@ -57,7 +57,7 @@ jobs:
         run: |
           docker run --detach --rm --name website-ci --publish 127.0.0.1:8080:8080 kurobara-website:ci
           trap 'docker stop website-ci' EXIT
-          curl --fail --retry 8 --retry-connrefused --retry-delay 1 http://127.0.0.1:8080/healthz
+          curl --fail --silent --show-error --retry 8 --retry-all-errors --retry-delay 1 --max-time 3 http://127.0.0.1:8080/healthz
           npm run test:server
 
       - name: Refuse generated drift
