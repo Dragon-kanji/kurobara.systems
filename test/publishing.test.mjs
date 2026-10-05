@@ -45,7 +45,15 @@ test("publishing renders both languages, metadata and cross-site links before Ja
     for (const match of html.matchAll(
       /<a[^>]*data-site-link="([^"]+)"[^>]*>/gu
     )) {
-      assert.ok(match[0].includes(`href="${match[1]}${suffix}"`));
+      const destination = new URL(match[1], "https://kurobara.systems");
+      if (language === "fr") {
+        destination.searchParams.set("lang", "fr");
+      }
+      assert.ok(
+        match[0].includes(
+          `href="${destination.pathname}${destination.search}${destination.hash}"`
+        )
+      );
     }
   }
 });

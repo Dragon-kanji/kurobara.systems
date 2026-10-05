@@ -33,7 +33,11 @@
       hreflang="x-default"
       rel="alternate"
     >
-    <link href="/favicon.svg" rel="icon" type="image/svg+xml">
+    <link
+      href="/assets/publishing/kurobara-rose-b45125b2.svg"
+      rel="icon"
+      type="image/svg+xml"
+    >
     <link href="/publishing/site.webmanifest" rel="manifest">
     <meta content="website" property="og:type">
     <meta
@@ -96,7 +100,7 @@
       "@id": "https://kurobara.systems/publishing/#organization",
       "name": "Kurobara Publishing",
       "url": "https://kurobara.systems/publishing/",
-      "logo": "https://kurobara.systems/favicon.svg",
+      "logo": "https://kurobara.systems/assets/publishing/kurobara-rose-b45125b2.svg",
       "email": "publishing@kurobara.systems",
       "sameAs": ["https://www.youtube.com/@KurobaraPublishing"]
     },
@@ -127,67 +131,83 @@
     <a class="skip-link" data-i18n="accessibility.skipToContent" href="#main"
       >Skip to content</a
     >
-    <div class="wrap">
-      <header class="site-header">
-        <a
-          aria-label="Kurobara Systems home"
-          class="brand"
-          data-i18n-label="accessibility.brandHome"
-          data-site-link="/"
-          href="/"
+    <header class="site-header">
+      <a
+        aria-label="Kurobara Systems, home"
+        class="brand"
+        data-i18n-label="accessibility.brandHome"
+        data-site-link="/#accueil"
+        href="/#accueil"
+      >
+        <img
+          alt=""
+          fetchpriority="high"
+          height="423"
+          src="/src/assets/wordmark.svg"
+          width="1478"
         >
-          <img alt="" height="423" src="/src/assets/wordmark.svg" width="1478">
-        </a>
-        <div class="header-links">
-          <nav
-            aria-label="Main navigation"
-            class="site-nav"
-            data-i18n-label="accessibility.primaryNavigation"
-          >
-            <a data-i18n="navigation.studio" data-site-link="/" href="/"
-              >Studio</a
-            >
-            <a
-              aria-current="page"
-              data-i18n="navigation.publishing"
-              data-site-link="/publishing/"
-              href="/publishing/"
-              >Publishing</a
-            >
-            <a
-              data-i18n="navigation.contact"
-              href="mailto:publishing@kurobara.systems"
-              >Contact</a
-            >
-          </nav>
-          <nav
-            aria-label="Language"
-            class="language"
-            data-i18n-label="accessibility.languageSelector"
-          >
-            <a
-              aria-current="true"
-              aria-label="English"
-              data-i18n-label="accessibility.switchToEnglish"
-              data-language="en"
-              href="./"
-              lang="en"
-              >EN</a
-            >
-            <span aria-hidden="true">/</span>
-            <a
-              aria-current="false"
-              aria-label="Français"
-              data-i18n-label="accessibility.switchToFrench"
-              data-language="fr"
-              href="?lang=fr"
-              lang="fr"
-              >FR</a
-            >
-          </nav>
-        </div>
-      </header>
-    </div>
+        <span class="brand-system" data-i18n="navigation.brandSystem"
+          >SYSTEMS</span
+        >
+      </a>
+      <nav
+        aria-label="Main navigation"
+        class="site-nav"
+        data-i18n-label="accessibility.mainNavigation"
+      >
+        <a
+          data-header-products
+          data-i18n="navigation.products"
+          data-site-link="/#produits"
+          href="/#produits"
+          >Products</a
+        >
+        <a
+          aria-current="page"
+          data-i18n="navigation.publishing"
+          data-site-link="/publishing/"
+          href="/publishing/"
+          >Publishing</a
+        >
+        <a data-header-contact data-site-link="/#contact" href="/#contact"
+          ><span data-i18n="navigation.contact">Contact</span>
+          <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
+            <path d="M5 19 19 5M5 5h14v14" />
+          </svg></a
+        >
+        <a data-close-contact data-site-link="/#accueil" hidden href="/#accueil"
+          ><span data-i18n="navigation.close">Close</span>
+          <svg aria-hidden="true" class="icon" viewBox="0 0 24 24">
+            <path d="m5 5 14 14M5 19 19 5" />
+          </svg></a
+        >
+      </nav>
+      <nav
+        aria-label="Language"
+        class="language-switch"
+        data-i18n-label="accessibility.languageSelector"
+      >
+        <a
+          aria-current="true"
+          aria-label="English"
+          data-language="en"
+          href="./"
+          hreflang="en"
+          lang="en"
+          >EN</a
+        >
+        <span aria-hidden="true">/</span>
+        <a
+          aria-current="false"
+          aria-label="Français"
+          data-language="fr"
+          href="?lang=fr"
+          hreflang="fr"
+          lang="fr"
+          >FR</a
+        >
+      </nav>
+    </header>
     <main id="main">
       <section class="hero wrap" id="top">
         <div class="hero-grid">
@@ -222,7 +242,7 @@
             alt=""
             class="hero-rose"
             height="1089"
-            src="/favicon.svg"
+            src="/assets/publishing/kurobara-rose-b45125b2.svg"
             width="1108"
           >
         </div>

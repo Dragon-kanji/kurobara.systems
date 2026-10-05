@@ -1,6 +1,9 @@
+import { translations } from "../i18n.ts";
+
 export const publishingCopy = {
   en: {
     accessibility: {
+      ...translations.en.accessibility,
       brandHome: "Kurobara Systems home",
       chapterImage:
         "FIVEBORN, audiobook chapter 1. A pink silhouette kneels beside a tiny person on a black background.",
@@ -57,11 +60,7 @@ export const publishingCopy = {
       websiteDescription:
         "Original fiction and free English audiobooks from Kurobara Publishing.",
     },
-    navigation: {
-      contact: "Contact",
-      publishing: "Publishing",
-      studio: "Studio",
-    },
+    navigation: translations.en.navigation,
     process: {
       adaptation:
         "English adaptation developed with AI assistance under the author’s direction.",
@@ -76,6 +75,7 @@ export const publishingCopy = {
   },
   fr: {
     accessibility: {
+      ...translations.fr.accessibility,
       brandHome: "Accueil Kurobara Systems",
       chapterImage:
         "FIVEBORN, livre audio, chapitre 1. Une silhouette rose s’agenouille près d’une personne minuscule sur fond noir.",
@@ -133,11 +133,7 @@ export const publishingCopy = {
       websiteDescription:
         "Fictions originales et livres audio gratuits en anglais par Kurobara Publishing.",
     },
-    navigation: {
-      contact: "Contact",
-      publishing: "Publishing",
-      studio: "Studio",
-    },
+    navigation: translations.fr.navigation,
     process: {
       adaptation:
         "Une adaptation anglaise élaborée avec l’aide de l’IA, sous la direction de l’auteur.",

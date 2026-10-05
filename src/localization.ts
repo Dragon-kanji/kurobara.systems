@@ -41,6 +41,11 @@ const replaceAttribute = (tag: string, name: string, value: string): string => {
 export const canonicalUrl = (base: string, language: Language): string =>
   `${base}${languageSearch("", language)}`;
 
+export const localizedSiteUrl = (base: string, language: Language): string => {
+  const [page, fragment] = base.split("#");
+  return `${canonicalUrl(page, language)}${fragment ? `#${fragment}` : ""}`;
+};
+
 const manifestUrl = (base: string, language: Language): string =>
   `${new URL(base).pathname}site${language === "fr" ? "-fr" : ""}.webmanifest`;
 
@@ -93,7 +98,7 @@ export const localizeMarkup = (
     .replace(
       /<a\b[^>]*\sdata-site-link="([^"]+)"[^>]*>/gu,
       (tag, base: string) =>
-        replaceAttribute(tag, "href", canonicalUrl(base, language))
+        replaceAttribute(tag, "href", localizedSiteUrl(base, language))
     );
 };
 
@@ -175,7 +180,7 @@ export const updateLanguageLinks = (language: Language): void => {
   for (const anchor of document.querySelectorAll<HTMLAnchorElement>(
     "a[data-site-link]"
   )) {
-    anchor.href = canonicalUrl(anchor.dataset.siteLink ?? "/", language);
+    anchor.href = localizedSiteUrl(anchor.dataset.siteLink ?? "/", language);
   }
 };
 
