@@ -1,8 +1,10 @@
+@import "../header.css";
+
 :root {
   --paper: #f6f4ee;
   --ink: #111110;
   --pink: #ff0064;
-  --gutter: clamp(24px, 4.1vw, 72px);
+  --gutter: clamp(24px, 3.4vw, 72px);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-synthesis: none;
@@ -66,53 +68,8 @@ img {
 .skip-link:focus {
   transform: translateY(0);
 }
-.site-header {
-  display: flex;
-  gap: 32px;
-  align-items: center;
-  justify-content: space-between;
-  padding-block: 22px;
-  border-bottom: 1px solid var(--ink);
-}
-.brand {
-  flex-shrink: 0;
-  width: 224px;
-}
-.brand img {
-  width: 100%;
-  height: auto;
-}
-.header-links {
-  display: flex;
-  gap: clamp(24px, 4vw, 64px);
-  align-items: center;
-}
-.site-nav,
-.language {
-  display: flex;
-  gap: 32px;
-  align-items: center;
-  font-size: 16px;
-}
-.site-nav a,
-.language a {
-  padding-block: 12px;
-}
-.site-nav a[aria-current="page"] {
-  box-shadow: 0 2px var(--pink);
-}
-.language {
-  gap: 10px;
-  white-space: nowrap;
-}
-.language a[aria-current="true"] {
-  font-weight: 700;
-}
-.language a[aria-current="false"] {
-  color: #62625e;
-}
 .hero {
-  padding-block: clamp(64px, 8vw, 120px) 0;
+  padding-block: clamp(190px, 16vw, 260px) 0;
 }
 .hero-grid {
   display: grid;
@@ -411,15 +368,6 @@ html[lang="fr"] .hero h1 {
   }
 }
 @media (max-width: 1000px) {
-  .brand {
-    width: 180px;
-  }
-  .header-links {
-    gap: 24px;
-  }
-  .site-nav {
-    gap: 20px;
-  }
   .hero-grid {
     grid-template-columns: 1.7fr 1fr;
   }
@@ -443,32 +391,20 @@ html[lang="fr"] .hero h1 {
     gap: 40px;
   }
 }
+@media (max-width: 900px) {
+  :root {
+    --gutter: clamp(24px, 7vw, 54px);
+  }
+  .hero {
+    padding-top: 64px;
+  }
+}
+@media (max-width: 360px) {
+  :root {
+    --gutter: 20px;
+  }
+}
 @media (max-width: 700px) {
-  .site-header {
-    flex-wrap: wrap;
-    gap: 12px;
-    padding-block: 16px 12px;
-  }
-  .brand {
-    width: 180px;
-  }
-  .header-links {
-    display: contents;
-  }
-  .language {
-    order: 1;
-    margin-left: auto;
-    font-size: 15px;
-  }
-  .site-nav {
-    gap: 28px;
-    order: 2;
-    width: 100%;
-    font-size: 15px;
-  }
-  .site-nav a {
-    padding-block: 8px;
-  }
   .hero {
     padding-top: 44px;
   }
