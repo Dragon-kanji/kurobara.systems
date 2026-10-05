@@ -41,6 +41,7 @@ interface NavigationCopy {
   readonly close: string;
   readonly contact: string;
   readonly products: string;
+  readonly publishing: string;
 }
 
 interface PerspectiveCopy {
@@ -112,6 +113,8 @@ interface StudioCopy {
   readonly journalAction: string;
   readonly journalDescription: string;
   readonly journalEyebrow: string;
+  readonly publishingAction: string;
+  readonly publishingDescription: string;
   readonly secondLeadLine: string;
   readonly secondTitleLine: string;
 }
@@ -244,6 +247,7 @@ const en: Copy = {
     close: "Close",
     contact: "Contact",
     products: "Products",
+    publishing: "Publishing",
   },
   perspectives: {
     expertises: {
@@ -286,6 +290,9 @@ const en: Copy = {
     journalAction: "Read my journal",
     journalDescription: "Ideas, experiments, behind the scenes.",
     journalEyebrow: "Beyond the studio",
+    publishingAction: "Explore Kurobara Publishing",
+    publishingDescription:
+      "Original stories, written for the page and brought to life in audio.",
     secondLeadLine: "And mine.",
     secondTitleLine: "And committed.",
   },
@@ -391,6 +398,7 @@ const fr: Copy = {
     close: "Fermer",
     contact: "Contact",
     products: "Produits",
+    publishing: "Éditions",
   },
   perspectives: {
     expertises: {
@@ -433,6 +441,9 @@ const fr: Copy = {
     journalAction: "Lire mon journal",
     journalDescription: "Les idées, les essais, les coulisses.",
     journalEyebrow: "À côté du studio",
+    publishingAction: "Découvrir Kurobara Publishing",
+    publishingDescription:
+      "Des histoires originales, écrites pour la page et mises en voix.",
     secondLeadLine: "Et pour les miens.",
     secondTitleLine: "Et impliqué.",
   },

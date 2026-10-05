@@ -1,7 +1,8 @@
 # kurobara.systems
 
 Source for the public [Kurobara Systems studio](https://kurobara.systems/)
-and the [Kurobara product website](https://kurobara.systems/kurobara/).
+the [Kurobara product website](https://kurobara.systems/kurobara/),
+and [Kurobara Publishing](https://kurobara.systems/publishing/).
 
 It is a static, no-tracking Vite site served by an unprivileged Nginx
 container. The Kurobara product, CLI, contracts, and documentation live in
@@ -13,16 +14,18 @@ The studio at `/` uses the approved Eclosion design: original rose geometry,
 ivory canvas, sparse copy and interactive perspectives for Products, Expertise,
 Studio and Contact. The product at `/kurobara/` retains the previously deployed
 product design, workflow and CLI quickstart. Each page has its own entry point,
-stylesheet and runtime; both are served by the same container.
+stylesheet and runtime; all three are served by the same container.
+Kurobara Publishing presents the original audiobook catalogue, beginning with
+FIVEBORN, with external listening links and a description of how the works are made.
 
 English is the default. A small EN / FR selector enables French with
 `?lang=fr`. Switching keeps the current fragment, workflow selection and other
-query parameters. The language follows links between the two sites and works
+query parameters. The language follows links between the three sites and works
 with browser Back. No cookies or local storage are required.
 
 The build produces English and French HTML, manifests and metadata. Nginx
 selects the locale before JavaScript runs. Localized canonical URLs, reciprocal
-`hreflang` links, a sitemap and separate social previews cover both sites.
+`hreflang` links, a sitemap and social previews cover all three sites.
 Physical French HTML files are internal; unknown routes return a real 404.
 
 Studio states use `#produits`, `#expertises`, `#studio`, `#contact` and
@@ -112,5 +115,7 @@ Small, focused pull requests are welcome. Read
 [`CONTRIBUTING.md`](./CONTRIBUTING.md) before submitting changes. Report
 security issues privately as described in [`SECURITY.md`](./SECURITY.md).
 
-Apache-2.0 licensed. Bundled font notices are documented in
+Website code is Apache-2.0 licensed. Original books, recordings, cover art and
+Publishing artwork retain their rights and are not relicensed by the website
+code license. Bundled font notices are documented in
 [`THIRD_PARTY_NOTICES.md`](./THIRD_PARTY_NOTICES.md).

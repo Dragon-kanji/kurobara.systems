@@ -13,9 +13,34 @@ const request = (path) =>
     signal: AbortSignal.timeout(15_000),
   });
 
+const verifySocialImage = async (path, language, html, route) => {
+  const publishing = path === "/publishing/";
+  const site = path === "/" ? "studio" : "product";
+  const imagePath = publishing
+    ? "/assets/publishing/fiveborn-chapter-01-bf796334.png"
+    : `/assets/social/og-${site}-${language}.jpg`;
+  const imageType = publishing ? "image/png" : "image/jpeg";
+  const signature = publishing
+    ? [137, 80, 78, 71, 13, 10, 26, 10]
+    : [255, 216, 255];
+  assert.ok(html.includes(`https://kurobara.systems${imagePath}`), route);
+  const image = await request(imagePath);
+  assert.equal(image.status, 200);
+  assert.ok(image.headers.get("content-type").startsWith(imageType));
+  assert.deepEqual(
+    [
+      ...new Uint8Array(await image.arrayBuffer()).subarray(
+        0,
+        signature.length
+      ),
+    ],
+    signature
+  );
+};
+
 await test("production HTTP routes and language artifacts", async () => {
   await Promise.all(
-    ["/", "/kurobara/"].flatMap((path) =>
+    ["/", "/kurobara/", "/publishing/"].flatMap((path) =>
       ["en", "fr"].map(async (language) => {
         const suffix = language === "fr" ? "?lang=fr" : "";
         const route = `${path}${suffix}`;
@@ -39,16 +64,7 @@ await test("production HTTP routes and language artifacts", async () => {
         for (const match of html.matchAll(assetPattern)) {
           assets.add(match[1]);
         }
-        const site = path === "/" ? "studio" : "product";
-        const imagePath = `/assets/social/og-${site}-${language}.jpg`;
-        assert.ok(html.includes(`https://kurobara.systems${imagePath}`), route);
-        const image = await request(imagePath);
-        assert.equal(image.status, 200);
-        assert.ok(image.headers.get("content-type").startsWith("image/jpeg"));
-        assert.deepEqual(
-          [...new Uint8Array(await image.arrayBuffer()).subarray(0, 3)],
-          [255, 216, 255]
-        );
+        await verifySocialImage(path, language, html, route);
         const manifest = await request(
           `${path}site${language === "fr" ? "-fr" : ""}.webmanifest`
         );
@@ -72,6 +88,11 @@ await test("production HTTP routes and language artifacts", async () => {
   await Promise.all(
     [
       ["/index.html?lang=fr", "https://kurobara.systems/?lang=fr"],
+      ["/publishing?lang=fr", "https://kurobara.systems/publishing/?lang=fr"],
+      [
+        "/publishing/index.html?lang=fr",
+        "https://kurobara.systems/publishing/?lang=fr",
+      ],
       ["/kurobara?lang=fr", "https://kurobara.systems/kurobara/?lang=fr"],
       [
         "/kurobara/index.html?lang=fr",
@@ -87,6 +108,8 @@ await test("production HTTP routes and language artifacts", async () => {
   await Promise.all(
     [
       "/studio-fr.html",
+      "/publishing/fr.html",
+      "/publishing/not-a-page",
       "/kurobara/fr.html",
       "/not-a-page",
       "/kurobara/not-a-page",
@@ -109,6 +132,6 @@ await test("production HTTP routes and language artifacts", async () => {
     )
   );
   process.stdout.write(
-    `Verified both sites and languages, ${assets.size} assets, manifests, social previews, redirects, 404s and health at ${base.origin}.\n`
+    `Verified all three sites and both languages, ${assets.size} assets, manifests, social previews, redirects, 404s and health at ${base.origin}.\n`
   );
 });
