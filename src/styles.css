@@ -1305,3 +1305,20 @@ body:not(.is-enhanced) .workflow {
     max-width: 4.2em;
   }
 }
+@media (max-width: 600px) {
+  .site-header {
+    flex-wrap: wrap;
+    row-gap: 4px;
+  }
+  .site-header .site-nav {
+    justify-content: space-between;
+    order: 2;
+    width: 100%;
+    margin-left: 0;
+  }
+  .language-switch {
+    position: static;
+    order: 1;
+    margin-left: auto;
+  }
+}

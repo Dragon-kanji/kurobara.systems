@@ -6,6 +6,9 @@ export default defineConfig(({ mode }) => ({
     cssCodeSplit: true,
     rolldownOptions: {
       input: {
+        publishing: fileURLToPath(
+          new URL("./publishing/index.html", import.meta.url)
+        ),
         studio: fileURLToPath(new URL("./index.html", import.meta.url)),
         ...(mode === "standalone"
           ? {}

@@ -28,4 +28,18 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://kurobara.systems/kurobara/?lang=fr" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kurobara.systems/kurobara/" />
   </url>
+  <url>
+    <loc>https://kurobara.systems/publishing/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kurobara.systems/publishing/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kurobara.systems/publishing/?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kurobara.systems/publishing/" />
+  </url>
+  <url>
+    <loc>https://kurobara.systems/publishing/?lang=fr</loc>
+    <lastmod>2026-10-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kurobara.systems/publishing/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://kurobara.systems/publishing/?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kurobara.systems/publishing/" />
+  </url>
 </urlset>
