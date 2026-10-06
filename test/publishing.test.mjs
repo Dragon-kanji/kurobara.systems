@@ -40,7 +40,7 @@ test("publishing renders both languages, metadata and cross-site links before Ja
     assert.equal(website.url, `https://kurobara.systems/publishing/${suffix}`);
     assert.equal(website.inLanguage, language);
     assert.equal(html.includes("<iframe"), false);
-    assert.ok(html.includes("X-rt17WHs0w"));
+    assert.ok(html.includes("rixlDnH215c"));
     assert.ok(html.includes("PLBiDWyKbQ7Zo"));
     for (const match of html.matchAll(
       /<a[^>]*data-site-link="([^"]+)"[^>]*>/gu
