@@ -6,7 +6,7 @@
   "type": "module",
   "packageManager": "npm@10.9.4",
   "engines": {
-    "node": "24.14.0"
+    "node": "24.22.1"
   },
   "scripts": {
     "build": "vite build && node scripts/localize-build.mjs",

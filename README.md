@@ -38,7 +38,7 @@ subscription. The existing public email address remains available as a fallback.
 
 ## Local development
 
-Requirements: Node.js `24.14.0` and npm `10.9.4`.
+Requirements: Node.js `24.22.1` and npm `10.9.4`.
 
 ```sh
 npm ci
