@@ -119,3 +119,13 @@ Website code is Apache-2.0 licensed. Original books, recordings, cover art and
 Publishing artwork retain their rights and are not relicensed by the website
 code license. Bundled font notices are documented in
 [`THIRD_PARTY_NOTICES.md`](./THIRD_PARTY_NOTICES.md).
+
+### October 2026 production runtime patch
+
+`Dockerfile.security-runtime` rebases the immutable deployed HTML/configuration
+from application revision `7afb9f90142d6e8bdbcf5bdae571d02479643ae6` onto the pinned
+Nginx 1.30.6 runtime. The source image must resolve to
+`sha256:a8a561e0121481840d6e0ccc775efb6cfc08dd1baa03180531fc5bbe525acbfb`.
+Compare hashes of every copied file before rollout. This recipe does not rebuild
+the client bundle. The normal Dockerfile also pins the supported security runtimes
+for future source builds.
