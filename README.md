@@ -129,3 +129,6 @@ Nginx 1.30.6 runtime. The source image must resolve to
 Compare hashes of every copied file before rollout. This recipe does not rebuild
 the client bundle. The normal Dockerfile also pins the supported security runtimes
 for future source builds.
+
+The source build also pins Vite 8.3.5 to remediate the full dependency audit's
+development-server advisories. Vite is not shipped in the static runtime image.
