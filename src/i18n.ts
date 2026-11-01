@@ -217,22 +217,24 @@ const en: Copy = {
     openPerspective: "Open a perspective.",
     openRose: "Open the rose",
     secondTitleLine: "take shape",
-    strapline: "Products, AI, automation.",
+    strapline: "Games, software and digital experiences.",
     titlePunctuation: ".",
   },
   metadata: {
     locale: "en_US",
     pageDescription:
-      "Independent digital product and systems studio. Products, AI, automation. By Léandre.",
+      "Independent studio creating games, software and digital experiences. By Léandre.",
     productDescription:
       "Open source B2B prospecting. From market criteria to an actionable list.",
     socialDescription:
-      "Products, AI, automation. An independent studio by Léandre.",
-    socialImage: "https://kurobara.systems/assets/social/og-studio-en.jpg",
+      "Games, software and digital experiences. An independent studio by Léandre.",
+    socialImage:
+      "https://kurobara.systems/assets/social/og-studio-en.jpg?v=15eb58b2beb2",
     socialImageAlt:
       "Kurobara Systems. Ideas take shape. A geometric black rose on an ivory background.",
     twitterImageAlt: "The geometric rose of Kurobara Systems.",
-    websiteDescription: "Independent digital product and systems studio.",
+    websiteDescription:
+      "Independent studio creating games, software and digital experiences.",
   },
   mobileMenu: {
     closeRose: "Close the rose",
@@ -366,23 +368,24 @@ const fr: Copy = {
     openPerspective: "Ouvrez une perspective.",
     openRose: "Ouvrir la rose",
     secondTitleLine: "prennent forme",
-    strapline: "Produits, IA, automatisation.",
+    strapline: "Jeux, logiciels et expériences numériques.",
     titlePunctuation: ".",
   },
   metadata: {
     locale: "fr_FR",
     pageDescription:
-      "Studio indépendant de produits et de systèmes numériques. Produits, IA, automatisation. Par Léandre.",
+      "Studio indépendant de jeux, de logiciels et d’expériences numériques. Par Léandre.",
     productDescription:
       "La prospection B2B en open source. Des critères de marché à une liste exploitable.",
     socialDescription:
-      "Produits, IA, automatisation. Un studio indépendant par Léandre.",
-    socialImage: "https://kurobara.systems/assets/social/og-studio-fr.jpg",
+      "Jeux, logiciels et expériences numériques. Un studio indépendant par Léandre.",
+    socialImage:
+      "https://kurobara.systems/assets/social/og-studio-fr.jpg?v=19ee589f5771",
     socialImageAlt:
       "Kurobara Systems. Les idées prennent forme. Une rose géométrique noire sur fond ivoire.",
     twitterImageAlt: "La rose géométrique de Kurobara Systems.",
     websiteDescription:
-      "Studio indépendant de produits et de systèmes numériques.",
+      "Studio indépendant de jeux, de logiciels et d’expériences numériques.",
   },
   mobileMenu: {
     closeRose: "Refermer la rose",
