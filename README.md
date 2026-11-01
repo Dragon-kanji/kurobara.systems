@@ -2,7 +2,7 @@
 
 Source for the public [Kurobara Systems studio](https://kurobara.systems/)
 the [Kurobara product website](https://kurobara.systems/kurobara/),
-and [Kurobara Publishing](https://kurobara.systems/publishing/).
+and [Games by Kurobara Systems](https://kurobara.systems/games/).
 
 It is a static, no-tracking Vite site served by an unprivileged Nginx
 container. The Kurobara product, CLI, contracts, and documentation live in
@@ -15,8 +15,11 @@ ivory canvas, sparse copy and interactive perspectives for Products, Expertise,
 Studio and Contact. The product at `/kurobara/` retains the previously deployed
 product design, workflow and CLI quickstart. Each page has its own entry point,
 stylesheet and runtime; all three are served by the same container.
-Kurobara Publishing presents the original audiobook catalogue, beginning with
-FIVEBORN, with external listening links and a description of how the works are made.
+Games introduces Romeria, an exploration game in development for Windows PC,
+with screenshots and a link to its official website. Walking sessions can use a
+compatible treadmill or Stroll mode with a keyboard or controller. The previous
+`/publishing/` entry points permanently redirect to `/games/`, preserving queries
+including the selected language.
 
 English is the default. A small EN / FR selector enables French with
 `?lang=fr`. Switching keeps the current fragment, workflow selection and other
@@ -96,8 +99,19 @@ the public page again. Do not edit a running container to deploy content.
 The Studio uses the owner's approved generated wordmark and original rose
 vector. Its geometry is preserved while transforms and fills animate the
 perspectives. The product keeps its original rose artwork. Locale-specific
-social images are captures of the actual rendered websites. Font notices
-remain unchanged.
+social images for Studio and Product are captures of the actual rendered websites.
+The Games page uses unmodified Romeria assets from the owner's official website:
+
+- [Garraf screenshot](https://playromeria.com/images/v2-garraf-geant-horizon.webp)
+  → `public/assets/romeria/garraf-1785ff3d.webp`;
+- [Montseny screenshot](https://playromeria.com/images/v2-montseny-automne.webp)
+  → `public/assets/romeria/montseny-5ae6b8ea.webp`;
+- [Romeria social image](https://playromeria.com/assets/social-card.jpg)
+  → `public/assets/romeria/social-5486cb5e.jpg`.
+
+These assets were retrieved on November 1, 2026. Filename suffixes are the first
+eight hexadecimal characters of each file's SHA-256 digest. Font notices remain
+unchanged.
 
 Keyboard focus, Escape, browser history, mobile disclosure navigation and
 reduced-motion styles are supported. Without JavaScript, the page content
@@ -115,9 +129,10 @@ Small, focused pull requests are welcome. Read
 [`CONTRIBUTING.md`](./CONTRIBUTING.md) before submitting changes. Report
 security issues privately as described in [`SECURITY.md`](./SECURITY.md).
 
-Website code is Apache-2.0 licensed. Original books, recordings, cover art and
-Publishing artwork retain their rights and are not relicensed by the website
-code license. Bundled font notices are documented in
+Website code is Apache-2.0 licensed. Romeria's name, game artwork, screenshots
+and social image retain their rights and are not relicensed by the website code
+license. The same applies to books, recordings and artwork in previous revisions.
+Bundled font notices are documented in
 [`THIRD_PARTY_NOTICES.md`](./THIRD_PARTY_NOTICES.md).
 
 ### October 2026 production runtime patch

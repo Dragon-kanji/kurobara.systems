@@ -1,9 +1,9 @@
 import { type Language, languageSearch, readLanguage } from "../i18n";
 import { applyMetadata, applyTranslations } from "../localization";
-import { publishingCopy } from "./i18n";
+import { gamesCopy } from "./i18n";
 import "./styles.css";
 
-const BASE = "https://kurobara.systems/publishing/";
+const BASE = "https://kurobara.systems/games/";
 let activeLanguage = readLanguage(window.location.search);
 
 const applyLanguage = (language: Language, push: boolean) => {
@@ -15,8 +15,8 @@ const applyLanguage = (language: Language, push: boolean) => {
     );
   }
   activeLanguage = language;
-  applyTranslations(publishingCopy[language], language);
-  applyMetadata(language, BASE, publishingCopy[language]);
+  applyTranslations(gamesCopy[language], language);
+  applyMetadata(language, BASE, gamesCopy[language]);
 };
 
 for (const link of document.querySelectorAll<HTMLAnchorElement>(

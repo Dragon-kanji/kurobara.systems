@@ -1,10 +1,10 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { gamesCopy } from "../src/games/i18n.ts";
 import { translations } from "../src/i18n.ts";
 import { localizeMarkup, localizeMetadata } from "../src/localization.ts";
 import { productCopy } from "../src/product/i18n.ts";
-import { publishingCopy } from "../src/publishing/i18n.ts";
 
 const dist = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
@@ -20,11 +20,11 @@ await Promise.all(
       name: "Kurobara Systems",
     },
     {
-      base: "https://kurobara.systems/publishing/",
-      copy: publishingCopy,
-      file: "publishing/index.html",
-      french: "publishing/fr.html",
-      name: "Kurobara Publishing",
+      base: "https://kurobara.systems/games/",
+      copy: gamesCopy,
+      file: "games/index.html",
+      french: "games/fr.html",
+      name: "Kurobara Systems — Games",
     },
     {
       base: "https://kurobara.systems/kurobara/",
@@ -50,7 +50,6 @@ await Promise.all(
         );
         const basePath = new URL(page.base).pathname;
         const product = basePath === "/kurobara/";
-        const publishing = basePath === "/publishing/";
         await writeFile(
           path.join(
             dist,
@@ -66,7 +65,7 @@ await Promise.all(
               lang: language,
               name: page.name,
               scope: basePath,
-              short_name: publishing ? "Kurobara Publishing" : "Kurobara",
+              short_name: "Kurobara",
               start_url: `${basePath}${language === "fr" ? "?lang=fr" : ""}`,
               theme_color: product ? "#000000" : "#f6f4ee",
             },
@@ -79,5 +78,5 @@ await Promise.all(
   })
 );
 process.stdout.write(
-  "Built English and French studio, product and publishing pages.\n"
+  "Built English and French studio, product and games pages.\n"
 );
