@@ -40,8 +40,8 @@ interface NavigationCopy {
   readonly brandSystem: string;
   readonly close: string;
   readonly contact: string;
+  readonly games: string;
   readonly products: string;
-  readonly publishing: string;
 }
 
 interface PerspectiveCopy {
@@ -110,11 +110,11 @@ interface StudioCopy {
   readonly eyebrow: string;
   readonly firstLeadLine: string;
   readonly firstTitleLine: string;
+  readonly gamesAction: string;
+  readonly gamesDescription: string;
   readonly journalAction: string;
   readonly journalDescription: string;
   readonly journalEyebrow: string;
-  readonly publishingAction: string;
-  readonly publishingDescription: string;
   readonly secondLeadLine: string;
   readonly secondTitleLine: string;
 }
@@ -246,8 +246,8 @@ const en: Copy = {
     brandSystem: "SYSTEMS",
     close: "Close",
     contact: "Contact",
+    games: "Games",
     products: "Products",
-    publishing: "Publishing",
   },
   perspectives: {
     expertises: {
@@ -287,12 +287,11 @@ const en: Copy = {
     eyebrow: "The studio",
     firstLeadLine: "For your projects.",
     firstTitleLine: "Independent.",
+    gamesAction: "Discover Romeria",
+    gamesDescription: "Romeria, an exploration game for your walking sessions.",
     journalAction: "Read my journal",
     journalDescription: "Ideas, experiments, behind the scenes.",
     journalEyebrow: "Beyond the studio",
-    publishingAction: "Explore Kurobara Publishing",
-    publishingDescription:
-      "Original stories, written for the page and brought to life in audio.",
     secondLeadLine: "And mine.",
     secondTitleLine: "And committed.",
   },
@@ -397,8 +396,8 @@ const fr: Copy = {
     brandSystem: "SYSTEMS",
     close: "Fermer",
     contact: "Contact",
+    games: "Jeux",
     products: "Produits",
-    publishing: "Éditions",
   },
   perspectives: {
     expertises: {
@@ -438,12 +437,12 @@ const fr: Copy = {
     eyebrow: "Le studio",
     firstLeadLine: "Pour vos projets.",
     firstTitleLine: "Indépendant.",
+    gamesAction: "Découvrir Romeria",
+    gamesDescription:
+      "Romeria, un jeu d’exploration pour vos séances de marche.",
     journalAction: "Lire mon journal",
     journalDescription: "Les idées, les essais, les coulisses.",
     journalEyebrow: "À côté du studio",
-    publishingAction: "Découvrir Kurobara Publishing",
-    publishingDescription:
-      "Des histoires originales, écrites pour la page et mises en voix.",
     secondLeadLine: "Et pour les miens.",
     secondTitleLine: "Et impliqué.",
   },

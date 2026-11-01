@@ -76,6 +76,8 @@ export const localizeMarkup = (
   for (const [data, attribute] of [
     ["data-i18n-label", "aria-label"],
     ["data-i18n-content", "content"],
+    ["data-i18n-alt", "alt"],
+    ["data-i18n-href", "href"],
   ] as const) {
     const pattern = new RegExp(`<[^>]+\\s${data}="([^"]+)"[^>]*>`, "gu");
     localized = localized.replace(pattern, (tag, key: string) =>
@@ -141,6 +143,14 @@ export const localizedSchema = (
           url: canonicalUrl("https://kurobara.systems/kurobara/", language),
         };
       }
+      if (entry["@type"] === "VideoGame") {
+        return {
+          ...entry,
+          description: resolveMessage(copy, "metadata.gameDescription"),
+          inLanguage: language,
+          url: resolveMessage(copy, "metadata.gameUrl"),
+        };
+      }
       return entry;
     }),
   };
@@ -201,6 +211,16 @@ export const applyTranslations = (copy: unknown, language: Language): void => {
     "[data-i18n-content]"
   )) {
     element.content = resolveMessage(copy, element.dataset.i18nContent ?? "");
+  }
+  for (const element of document.querySelectorAll<HTMLImageElement>(
+    "img[data-i18n-alt]"
+  )) {
+    element.alt = resolveMessage(copy, element.dataset.i18nAlt ?? "");
+  }
+  for (const element of document.querySelectorAll<HTMLAnchorElement>(
+    "a[data-i18n-href]"
+  )) {
+    element.href = resolveMessage(copy, element.dataset.i18nHref ?? "");
   }
   updateLanguageLinks(language);
 };
