@@ -6,7 +6,7 @@ contracts, and documentation belong in
 
 ## Development
 
-Use Node.js `24.14.0` and npm `10.9.4`.
+Use Node.js `24.22.1` and npm `10.9.4`.
 
 ```sh
 npm ci
@@ -21,6 +21,13 @@ npm run typecheck
 npm test
 npm run build
 ```
+
+Formatting and linting use Biome `2.5.5` directly. The local
+[`tooling/ultracite-core.biome.jsonc`](./tooling/ultracite-core.biome.jsonc)
+preset preserves the rules from Ultracite `7.9.4`; its provenance and MIT
+license are recorded in [third-party notices](./THIRD_PARTY_NOTICES.md).
+`npm run check` checks files without writing; `npm run fix` applies safe
+fixes. Both commands accept file paths after `--`.
 
 For layout or interaction changes, verify desktop and mobile views. Keep the
 site static, accessible, fast, and free of tracking or runtime secrets.
